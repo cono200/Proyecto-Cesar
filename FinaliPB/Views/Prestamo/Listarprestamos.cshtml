@@ -1,0 +1,56 @@
+﻿@model List<PrestamoModel>;
+@{
+    
+}
+<body>
+    <div id="container">
+        <h1>Gestion de Prestamos</h1>
+
+        <form id="search-form">
+            <a asp-action="GuardarPrestamo" asp-controller="Prestamo" id="search-button" class="btn btn-warning btn-sm">Agregar</a>
+
+            @*<button type="submit" id="search-button">Buscar</button>*@
+            <h2>Resultados de la Búsqueda</h2>
+            <table id="book-table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Título</th>
+                        <th>Autor</th>
+                        <th>Cantidad</th>
+                        <th>ISBN</th>
+                        <th>Fecha Compra</th>
+                        <th>Fecha Adquirido</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem=>item.IdPrestamo)</td>
+                            <td>@Html.DisplayFor(modelItem=>item.Titulo)</td>
+                            <td>@Html.DisplayFor(modelItem=>item.Usuario)</td>
+                            <td>@Html.DisplayFor(modelItem=>item.Cantidad)</td>
+                            <td>@Html.DisplayFor(modelItem=>item.Fecha_de_Prestamo)</td>
+                            <td>@Html.DisplayFor(modelItem=>item.Fecha_de_Entrega)</td>
+
+                            <td>
+                                @*<a asp-action="ModificarLi" asp-controller="LibrosCrud" asp-route-IdLibro="@item.IdLibro"  class="btn btn-warning btn-sm">Modificar</a>*@
+                                <a asp-action="Modificar" asp-controller="Libro" asp-route-IdPrestamo="@item.IdPrestamo" class="btn btn-warning btn-sm">Editar</a>
+                                <a asp-action="Eliminar" asp-controller="Libro" asp-route-IdPrestamo="@item.IdPrestamo" class="btn btn-danger btn-sm">Eliminar</a>
+
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+
+        </form>
+        <div>
+            <a asp-action="Index" asp-controller="Libro" class="btn btn-warning btn-sm">volver</a>
+
+        </div>
+
+    </div>
+</body>

@@ -1,0 +1,42 @@
+﻿@model FinaliPB.Models.LibroModel;
+@{
+}
+
+
+<div class="container mt-5">
+    <h2>Buscar Libros</h2>
+    <form>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Ingrese título o autor del libro" aria-label="Buscar Libros" aria-describedby="buscar-btn">
+            <button asp-controller="Libro" asp-action="Obtener" class="btn btn-primary" type="submit" id="buscar-btn">Buscar</button>
+
+            <div>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Título</th>
+                        <th>Autor</th>
+                        <th>Cantidad</th>
+                        <th>ISBN</th>
+                        <th>Fecha Compra</th>
+                        <th>Fecha Adquirido</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+
+
+                    @* @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.IdLibro</td>
+                            <td>@item.Nombre</td>
+                            Agrega más celdas según tus resultados 
+                        </tr>
+                    }*@
+                </tbody>
+            </div>
+
+        </div>
+    </form>
+</div>

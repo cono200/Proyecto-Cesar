@@ -1,0 +1,25 @@
+﻿@model PrestamoModel;
+@{
+    ViewData["Title"] = "EliminarPrestamos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card col-8">
+    <div class="card-header">
+        EliminarPrestamo
+    </div>
+    <div class="card-body justify-content-center">
+        <form asp-action="Eliminar" asp-contraller="PrestamoController" method="post">
+            <input asp-for="IdPrestamo" type="hidden" class="form-control" />
+            <div class="alert alert-danger" role="alert">
+                ¿Deseas eliminar el prestamo: @Html.DisplayTextFor(m=>m.Titulo)?
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <button type="submit" class="btn btn-danger mb-3 btn-sm">Eliminar</button><br />
+                <a asp-action="ListarPrestamos" asp-controller="Prestamo" class="btn btn-warning btn-sm">Volver a la lista</a>
+            </div>
+        </form>
+    </div>
+</div>
+

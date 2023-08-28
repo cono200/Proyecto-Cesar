@@ -1,0 +1,102 @@
+﻿@model FinaliPB.Models.LibroModel;
+@{
+    ViewData["Title"] = "Modificar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <div id="container">
+        <h1>Gestión de Libros</h1>
+
+        <h2>Añadir/Modificar Libro</h2>
+        <form asp-Action="Modificar" asp-controller="Libro" id="book-form" method="post">
+            <input type="hidden" asp-for="IdLibro" />
+            <label for="title">Título:</label>
+            <input asp-for="Nombre" type="text" id="title" placeholder="Título" required>
+            <span asp-validation-for="Nombre" class="text-danger"></span>
+
+            <label for="author">Autor:</label>
+            <input asp-for="Autor" type="text" id="author" placeholder="Autor" required>
+            <span asp-validation-for="Autor" class="text-danger"></span>
+
+            <label for="Cantidad">Cantidad:</label>
+            <input asp-for="Cantidad" type="number" id="title" placeholder="Cantidad" required>
+            <span asp-validation-for="Cantidad" class="text-danger"></span>
+
+            <label for="isbn">ISBN:</label>
+            <input asp-for="ISBN" type="text" id="isbn" placeholder="ISBN" required>
+            <span asp-validation-for="ISBN" class="text-danger"></span>
+
+            <label for="fcompra">Fecha de compra:</label>
+            <input asp-for="Fecha_de_Compra" type="date" id="fcompra" placeholder="Fecha de Compra" required>
+
+            <label for="fadquisicion">fecha de adquisicion:</label>
+            <input asp-for="Fecha_de_Adquisicion" type="date" id="fadquisicion" placeholder="Fecha de Adquisicion" required>
+
+            <button type="submit">Editar</button>
+            <br>
+            <a asp-action="Listar" asp-controller="Libro" id="cancel-button">Cancelar</a>
+        </form>
+    </div>
+
+</body>
+
+
+</html>
+*@
+<div class="card-body justify-content-center">
+    <div class="card-header">
+        Editar Datos Del Libro
+    </div>
+    <div class="card-body justify-content-center">
+        <form asp-action="Modificar" asp-controller="Libro" method="post">
+            <input asp-for="IdLibro" type="hidden" class="form-control" />
+            <div class="col-md-4 mb-3">
+                <label for="staticEmail2">Autor</label>
+                <input asp-for="Autor" type="text" class="form-control" placeholder="Ingrese Autor " />
+                <span asp-validation-for="Autor" class="text-danger"></span>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="staticEmail2">Nombre</label>
+                <input asp-for="Nombre" type="text" class="form-control" placeholder="Ingrese Nombre  " />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="staticEmail2">Cantidad</label>
+                <input asp-for="Cantidad" type="number" class="form-control" placeholder="Ingrese Cantidades" />
+                <span asp-validation-for="Cantidad" class="text-danger"></span>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="staticEmail2">ISBN</label>
+                <input asp-for="ISBN" type="text" class="form-control" placeholder="Proporcione Numero de Identificacion" />
+                <span asp-validation-for="ISBN" class="text-danger"></span>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="staticEmail2">Fecha_de_compra</label>
+                <input asp-for="Fecha_de_Compra" type="date" class="form-control" placeholder="Ingrese Fecha de Compra" />
+                <span asp-validation-for="Fecha_de_Compra" class="text-danger"></span>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="staticEmail2">Fecha_de_Adquisicion</label>
+                <input asp-for="Fecha_de_Adquisicion" type="date" class="form-control" placeholder="Ingrese Fecha de Adquisicion" />
+                <span asp-validation-for="Fecha_de_Adquisicion" class="text-danger"></span>
+            </div>
+            <div class="col-md-4 mb-3">
+                <button type="submit" class="btn btn-primary mb-3 btn-sm">Guardar</button>
+                <a asp-action="Listar" asp-controller="Libro" class="btn btn-warning btn-sm">Volver a la lista</a>
+            </div>
+        </form>
+
+    </div>
+
+</div>
+

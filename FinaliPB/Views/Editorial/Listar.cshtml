@@ -1,0 +1,72 @@
+﻿@model List<FinaliPB.Models.EditorialModel>;
+@{
+    ViewData["Title"] = "Listar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!DOCTYPE html>
+
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="./css/stylecon.css" />
+</head>
+<body>
+    <div id="container">
+        <h1>Gestion de Editoriales</h1>
+
+        <form id="search-form">
+            
+            @*<button type="submit" id="search-button">Buscar</button>*@
+
+            <div>
+                <a asp-action="Guardar" asp-controller="Editorial" class="btn btn-warning btn-sm">añadir</a>
+
+            </div>
+            <h2>Resultados de la Búsqueda</h2>
+            <table id="book-table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Editorial</th>
+                        <th>Publicaciones</th>
+                        <th>Calidad</th>
+                        <th>Especialidad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem=>item.IdEditorial)</td>
+                            <td>@Html.DisplayFor(modelItem=>item.Nombre)</td>
+                            <td>@Html.DisplayFor(modelItem=>item.Numero_Publicaciones)</td>
+                            <td>@Html.DisplayFor(modelItem=>item.Calidad)</td>
+                            <td>@Html.DisplayFor(modelItem=>item.Especialidad)</td>
+
+                            <td>
+                                @*<a asp-action="ModificarLi" asp-controller="LibrosCrud" asp-route-IdLibro="@item.IdLibro"  class="btn btn-warning btn-sm">Modificar</a>*@
+                                <a asp-action="Modificar" asp-controller="Libro" asp-route-IdLibro="@item.IdEditorial" class="btn btn-warning btn-sm">Editar</a>
+                                <a asp-action="Eliminar" asp-controller="Libro" asp-route-IdLibro="@item.IdEditorial" class="btn btn-danger btn-sm">Eliminar</a>
+                                <a asp-action="Añadir" asp-controller="Libro" id="search-button" class="btn btn-warning btn-sm">Agregar</a>
+
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+
+        </form>
+        <div>
+            <a asp-action="Index" asp-controller="Libro" class="btn btn-warning btn-sm">volver</a>
+
+        </div>
+
+    </div>
+</body>
+</html>

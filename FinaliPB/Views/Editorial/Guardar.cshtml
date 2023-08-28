@@ -1,0 +1,38 @@
+﻿@model FinaliPB.Models.EditorialModel;
+@{
+    ViewData["Tittle"] = "Guardar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+<div class="card col-8">
+    <div class="card-header">
+        nueva editorial
+    </div>
+    <div class="card-body  justify-content-center">
+        <form asp-action="Guardar" asp-controller="Editorial">
+            <div class="col-md-4 mb-3">
+                <label for="NOMBRE">Nombre</label>
+                <input asp-for="Nombre" type="text" id="NOMBRE" class="form-control" />
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="NUMERO_PUBLICACIONES">libros publicados</label>
+                <input asp-for="Numero_Publicaciones" type="number" id="NUMERO_PUBLICACIONES" class="form-control" />
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="CALIDAD">Calidad</label>
+                <input asp-for="Calidad" type="text" id="CALIDAD" class="form-control" />
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="ESPECIALIDAD">Especialidad</label>
+                <input asp-for="Especialidad" type="text" class="form-control" id="ESPECIALIDAD" placeholder="Password">
+            </div>
+            <div class="col-md-4 mb-3">
+                <button type="submit" class="btn btn-primary">enviar</button>
+            </div>
+        </form>
+        <div>
+            <a asp-action="Listado" asp-controller="Editorial" class="btn btn-warning btn-sm">volver</a>
+        </div>
+    </div>
+</div>
+

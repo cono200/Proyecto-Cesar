@@ -1,0 +1,51 @@
+﻿@model FinaliPB.Models.PrestamoModel;
+@{
+    ViewData["Title"] = "Editar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<body>
+
+    <div class="card col-8">
+        <div class="card-header">
+            Editar prestamo
+        </div>
+        
+        <div class="card-body justify-content-center">
+
+        </div>
+        <!-- Formulario para Crear/Editar Préstamo -->
+        <form asp-action="Editar" asp-controller="Modificar_Presatamo" method="post">
+            <input asp-for="IdPrestamo" type="hidden" class="form-control" />
+
+            <div class="col-md-4 mb-3">
+                <label for="staticEmail2">Titulo</label>
+                <input asp-for="Titulo" type="text" class="form-control" />
+                <span asp-validation-for="Titulo" class="text-danger"></span>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="staticEmail2">Usuario</label>
+                <input asp-for="Usuario" type="number" class="form-control" />
+                <span asp-validation-for="Usuario" class="text-danger"></span>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="loanDate">Fecha de Prestamo:</label>
+                <input asp-for="Fecha_de_Prestamo" type="date" class="form-control" />
+                <span asp-validation-for="Fecha_de_Prestamo" class="text-danger"></span>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="loanDate">Fecha de Entrega:</label>
+                <input asp-for="Fecha_de_Entrega" type="date" class="form-control" />
+                <span asp-validation-for="Fecha_de_Entrega" class="text-danger"></span>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="loanDate">Estado:</label>
+                <input asp-for="Estatus" type="date" class="form-control" />
+                <span asp-validation-for="Estatus" class="text-danger"></span>
+            </div>
+            <div class="col-md-4 mb-3">
+                <button type="submit" class="btn btn-primary mb-3 btn-sm">Guardar</button>
+                <a asp-action="Listar" asp-controller="Modificar_Presatamo" class="btn btn-warning btn-sm">Volver a la lista</a>
+            </div>
+        </form>
+    </div>
+</body>

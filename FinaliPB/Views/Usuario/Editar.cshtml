@@ -1,0 +1,44 @@
+﻿@model FinaliPB.Models.UsuarioModel;
+@{
+    ViewData["Title"] = "Editar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card-body justify-content-center">
+    <div class="card-header">
+        Editar Usuario
+    </div>
+    <div class="card-body justify-content-center">
+        <form asp-action="Editar" asp-controller="Usuario" method="post">
+            <input asp-for="IdUsuario" type="hidden" class="form-control" />
+
+            <div class="col-md-4 mb-3">
+                <label for="staticEmail2">Nombre</label>
+                <input asp-for="Nombre" type="text" class="form-control" placeholder="Ingrese Nombre" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="staticEmail2">Apellido</label>
+                <input asp-for="Apellido" type="text" class="form-control" placeholder="Ingrese Apellido" />
+                <span asp-validation-for="Apellido" class="text-danger"></span>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="staticEmail2">Correo</label>
+                <input asp-for="Correo" type="email" class="form-control" placeholder="Ingrese Correo" />
+                <span asp-validation-for="Correo" class="text-danger"></span>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="staticEmail2">Contraseña</label>
+                <input asp-for="Contraseña" type="password" class="form-control" placeholder="Ingrese Contraseña" />
+                <span asp-validation-for="Contraseña" class="text-danger"></span>
+            </div>
+            <div class="col-md-4 mb-3">
+                <button type="submit" class="btn btn-primary mb-3 btn-sm">Guardar</button>
+                <a asp-action="Listar" asp-controller="Usuario" class="btn btn-warning btn-sm">Volver a la lista</a>
+            </div>
+        </form>
+
+    </div>
+
+</div>
+

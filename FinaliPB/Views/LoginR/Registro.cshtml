@@ -1,0 +1,43 @@
+﻿@model FinaliPB.Models.UsuarioModel;
+
+@{
+    ViewData["Title"] = "Registro";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Registro</h1>
+<div class="modal-body p-5 pt-0">
+    <form class="" asp-action="Registro" asp-controller="LoginR" method="post">
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control rounded-3" asp-for="Nombre" id="floatingInput" placeholder="name@example.com" />
+            <span asp-validation-for="Nombre" class="text-danger"></span>
+            <label for="floatingInput">Nombre</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control rounded-3" asp-for="Apellido" id="floatingInput" placeholder="name@example.com" />
+            <span asp-validation-for="Apellido" class="text-danger"></span>
+            <label for="floatingInput">Apellido</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control rounded-3" asp-for="Correo" id="floatingInput" placeholder="name@example.com" />
+            <span asp-validation-for="Correo" class="text-danger"></span>
+            <label for="floatingInput">Correo</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="password" class="form-control rounded-3" asp-for="Contraseña" id="floatingInput" placeholder="name@example.com" />
+            <span asp-validation-for="Contraseña" class="text-danger"></span>
+            <label for="floatingInput">Contraseña</label>
+        </div>
+        
+        <button class="w-100 mb-2 btn btn-lg rounded-3 btn-success" type="submit">Registrarme!</button>
+        @* @if (ViewData["Mensaje"]! = null)
+        {
+        <div class="alert alert-danger" role="alert">
+        @ViewData["Mensaje"]
+        </div>
+        }*@
+        <a asp-action="Login" asp-controller="LoginR"><span>¿Ya tienes cuenta?</span></a>
+    </form>
+
+
+</div>

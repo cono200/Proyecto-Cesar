@@ -1,0 +1,74 @@
+﻿@model List<UsuarioModel>;
+@{
+    ViewData["Title"] = "Listar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card col-8">
+    <div class="card-header">
+        Lista de contacto
+    </div>
+    <div class="card-body">
+        <a asp-action="Guardar" asp-controller="Usuario" class="btn btn-primary btn-sm">Crear Nuevo</a>
+        <table class="table-striped">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <br />
+                    <th>Apellido</th>
+                    <br />
+                    <th>Correo</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem=>item.Nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem=>item.Apellido)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem=>item.Correo)
+                        </td>
+                        <td>
+                            <a asp-action="Editar" asp-controller="Usuario" asp-route-IdUsuario="@item.IdUsuario" class="bt btn-warning btn-sm">Editar</a>
+                            <form asp-action="Eliminar" asp-controller="Usuario" method="post" onsubmit="return confirm('¿Estás seguro de eliminar esta usuario?');">
+                                <input type="hidden" name="id" value="@item.IdUsuario" />
+                                <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+@*
+@{
+    ViewData["Title"] = "CambiarContraseña";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<form class="" asp-action="CambiarContraseña" asp-controller="LoginR" method="post">
+    <div class="form-floating mb-3">
+        <input type="email" class="form-control rounded-3" id="floatingInput" placeholder="name@example.com" name="correo"required />
+        <label for="floatingInput">Correo</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="password" class="form-control rounded-3" id="floatingPassword" placeholder="name@example.com" name="contraseña" required />
+        <label for="floatingPassword">Contraseña</label>
+    </div>
+    <button class="w-100 mb-2 btn btn-lg rounded-3 btn-outline-warning" type="submit">Cambiar Contraseña</button>
+   @* @if(ViewData["Mensaje"]! = null)
+    {
+        <div class="alert alert-danger" role="alert">
+            @ViewData["Mensaje"]
+        </div>
+    }*@
+@*</form>
+*@

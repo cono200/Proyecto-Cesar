@@ -1,0 +1,58 @@
+﻿@model PrestamoModel;
+@{
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/styleañadir.css">
+</head>
+<body>
+    <div class="card-header">
+        <h1>Añadir de Libros</h1>
+    </div>
+    <div class="card-body justify-content-center" id="container">
+
+
+        <form asp-action="GuardarPrestamo" asp-controller="Prestamo">
+            <div class="mb-3">
+                <label for="titulo" class="form-label">Nombre:</label>
+                <input asp-for="Titulo" type="text" class="form-control" id="titulo" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="autor" class="form-label">Autor:</label>
+                <input asp-for="Usuario" type="text" class="form-control" id="autor">
+            </div>
+            <div class="mb-3">
+                <label for="CANTIDAD" class="form-label">Cantidad:</label>
+                <input asp-for="Cantidad" type="number" class="form-control" id="CANTIDAD">
+            </div>
+            <div class="mb-3">
+                <label for="isbn" class="form-label">Fecha de prestamo:</label>
+                <input asp-for="Fecha_de_Prestamo" type="Date" class="form-control" id="isbn">
+            </div>
+            <div class="mb-3">
+                <label for="fcompra" class="form-label">Fecha de Entrega:</label>
+                <input asp-for="Fecha_de_Entrega" type="date" class="form-control" id="fcompra">
+            </div>
+            <div class="mb-3">
+                <label for="fadquisicion" class="form-label">Estado:</label>
+                <input asp-for="Estatus" type="text" class="form-control" id="fadquisicion">
+            </div>
+
+            <button type="submit" class="btn btn-primary">enviar</button>
+
+        </form>
+        <div>
+            <a asp-action="Listar" asp-controller="Prestamo" class="btn btn-warning btn-sm">volver</a>
+        </div>
+    </div>
+
+</body>
+
+
+</html>
